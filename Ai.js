@@ -2,7 +2,7 @@ const { Configuration, OpenAIApi } = require("openai");
 
 // Creat a configuration object
 const configuration = new Configuration({
-  apiKey: process.env['API_KEY'],
+  apiKey: process.env['OPENAI-API-SECRET'],
 });
 
 // Create the OpenAIApi object
@@ -26,7 +26,7 @@ async function getColor(colorName) {
     presence_penalty: 0,
     stop: ["\n"],
   });
-
+  
   // Just text response
   var text = response.data.choices[0].text.trim()
   
